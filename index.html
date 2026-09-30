@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SCORVYNX — Plataforma Tecnológica</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;600;800&family=Geist+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+body{background:#040507;color:#E6E8EB;font-family:'Geist',sans-serif}
+.glass{background:rgba(15,16,19,0.9);backdrop-filter:blur(24px);border:1px solid rgba(120,180,255,0.12)}
+.glow{box-shadow:0 0 40px rgba(56,189,248,0.15),0 0 80px rgba(99,102,241,0.1)}
+.blue-grad{background:linear-gradient(135deg,#22D3EE 0%,#3B82F6 50%,#6366F1 100%)}
+</style>
+</head>
+<body class="overflow-x-hidden">
+<header class="sticky top-0 z-50 glass border-b border-cyan-500/10">
+<div class="max-w-7xl mx-auto px-6 h-[68px] flex items-center justify-between">
+<div id="logoTrigger" class="flex items-center gap-3 cursor-pointer select-none" style="user-select:none;-webkit-touch-callout:none">
+<div class="w-9 h-9 rounded-xl blue-grad flex items-center justify-center font-black text-black">S</div>
+<span class="font-extrabold tracking-[0.2em] text-sm">SCORVYNX</span>
+<span class="hidden md:inline ml-3 text-[10px] tracking-widest opacity-40 border border-cyan-400/20 px-2 py-1 rounded-full">TECH PLATFORM • BLUE EDITION</span>
+</div>
+<button onclick="openIA()" class="blue-grad text-black px-6 py-2.5 rounded-full text-sm font-bold glow">Hablar con IA • Azul</button>
+</div>
+</header>
+
+<section class="max-w-7xl mx-auto px-6 py-20 md:py-28 grid md:grid-cols-2 gap-10 items-center">
+<div>
+<div class="inline-flex items-center gap-2 glass px-3 py-1 rounded-full text-[11px] tracking-widest text-cyan-300">● SISTEMA AZUL ACTIVO • M.J. CALLE, GUAYAS</div>
+<h1 class="mt-6 text-[44px] md:text-[72px] leading-[0.9] font-extrabold tracking-tight">Convierte tu <span class="text-transparent bg-clip-text blue-grad">idea</span><br>en un proyecto<br>profesional.</h1>
+<p class="mt-6 text-lg opacity-60 max-w-lg">Plataforma tecnológica azul SCORVYNX. Conectamos tu necesidad con especialistas, automatización e IA.</p>
+<div class="mt-8 flex flex-wrap gap-3">
+<button onclick="openForm()" class="blue-grad text-black px-8 py-3.5 rounded-full font-bold glow">Solicitar proyecto →</button>
+<button onclick="document.getElementById('servicios').scrollIntoView({behavior:'smooth'})" class="glass px-7 py-3.5 rounded-full text-sm">Ver servicios azules</button>
+</div>
+</div>
+<div class="glass rounded-[32px] p-6 glow border-cyan-400/20">
+<div class="text-[11px] tracking-widest opacity-50 mb-4">● ASISTENTE SCORVYNX — EDICIÓN AZUL</div>
+<div class="space-y-3 text-sm">
+<div class="bg-cyan-500/10 border border-cyan-400/20 p-3 rounded-xl">¡Hola! Soy tu asistente azul. ¿Qué proyecto quieres crear hoy?</div>
+</div>
+<button onclick="openIA()" class="w-full mt-6 blue-grad text-black py-3 rounded-full font-bold">Iniciar chat azul</button>
+</div>
+</section>
+
+<section id="servicios" class="border-t border-cyan-500/10 py-16 px-6 max-w-7xl mx-auto">
+<h2 class="text-3xl font-bold">Servicios <span class="text-cyan-400">Azules</span></h2>
+<div class="mt-8 grid md:grid-cols-3 lg:grid-cols-5 gap-4" id="servGrid"></div>
+</section>
+
+<section id="tienda" class="border-t border-cyan-500/10 py-16 px-6 max-w-7xl mx-auto">
+<div class="flex justify-between items-center"><h2 class="text-3xl font-bold">Tech Store <span class="text-cyan-400">Azul</span></h2><button onclick="openCart()" class="glass px-5 py-2 rounded-full text-sm border-cyan-400/30">Carrito (<span id="cartCount">0</span>)</button></div>
+<div class="mt-8 grid md:grid-cols-4 gap-4" id="storeGrid"></div>
+</section>
+
+<section class="border-t border-cyan-500/10 py-16 px-6 max-w-7xl mx-auto">
+<h2 class="text-3xl font-bold">Portafolio — <span class="text-cyan-400">Proyecto conceptual</span></h2>
+<div class="mt-8 grid md:grid-cols-3 gap-4">
+<div class="glass rounded-2xl p-6"><b>NEO // 2024</b><br><span class="text-xs opacity-50">Proyecto conceptual — Identidad azul</span></div>
+<div class="glass rounded-2xl p-6"><b>LUMINA</b><br><span class="text-xs opacity-50">Proyecto conceptual — Branding</span></div>
+<div class="glass rounded-2xl p-6"><b>ARRO Campaign</b><br><span class="text-xs opacity-50">Proyecto conceptual — Campaña</span></div>
+</div>
+</section>
+
+<footer class="border-t border-cyan-500/10 py-10 px-6 text-center text-xs opacity-40">SCORVYNX BLUE • Mantén logo 5s para admin oculto</footer>
+
+<div id="projModal" class="fixed inset-0 hidden bg-black/90 z-[60] flex items-center justify-center p-4"><div class="glass rounded-[24px] p-6 w-full max-w-md border-cyan-400/20"><h3 class="font-bold text-cyan-300">Solicitar Proyecto Azul</h3><input id="pName" placeholder="Tu nombre" class="mt-4 w-full bg-black border border-cyan-500/20 rounded-xl p-3"><textarea id="pDesc" placeholder="Describe tu idea..." class="mt-3 w-full bg-black border border-cyan-500/20 rounded-xl p-3 h-24"></textarea><button onclick="submitProj()" class="w-full mt-4 blue-grad text-black py-3 rounded-full font-bold">Enviar</button><button onclick="closeModal('projModal')" class="w-full mt-2 border border-white/10 py-2 rounded-full text-sm">Cerrar</button></div></div>
+<div id="cartModal" class="fixed inset-0 hidden bg-black/90 z-[60] flex items-center justify-center p-4"><div class="glass rounded-[24px] p-6 w-full max-w-md"><h3 class="font-bold">Carrito Azul</h3><div id="cartItems" class="mt-4 text-sm opacity-70">Vacío</div><button onclick="closeModal('cartModal')" class="w-full mt-4 border border-white/10 py-3 rounded-full">Cerrar</button></div></div>
+<div id="iaModal" class="fixed inset-0 hidden bg-black/90 z-[60] flex items-center justify-center p-4"><div class="glass rounded-[24px] p-6 w-full max-w-md border-cyan-400/20"><h3 class="font-bold text-cyan-300">Asistente Azul</h3><div id="iaChat" class="mt-4 space-y-2 text-sm max-h-72 overflow-auto"></div><div class="flex gap-2 mt-4"><input id="iaInput" class="flex-1 bg-black border border-cyan-500/20 rounded-full px-4 py-3 text-sm" placeholder="Escribe..." onkeydown="if(event.key==='Enter')nextIA()"><button onclick="nextIA()" class="blue-grad text-black px-5 rounded-full font-bold">→</button></div></div></div>
+<div id="adminLogin" class="fixed inset-0 hidden bg-black/95 z-[100] flex items-center justify-center p-4"><div class="bg-[#0A0F18] border border-cyan-400/20 w-full max-w-sm rounded-[24px] p-7 text-center"><h3 class="font-bold text-cyan-300">Acceso Azul Administrativo</h3><input id="adminPin" type="password" placeholder="PIN 2004" class="mt-6 w-full bg-black border border-cyan-500/20 rounded-xl p-3 text-center tracking-[8px]"><input id="adminPass" type="password" placeholder="scorvynx2026" class="mt-3 w-full bg-black border border-cyan-500/20 rounded-xl p-3 text-center"><button id="adminLoginBtn" class="w-full mt-5 blue-grad text-black py-3 rounded-full font-bold">Entrar</button><p id="adminError" class="hidden text-red-400 text-xs mt-3">Credenciales incorrectas</p></div></div>
+<div id="adminPanel" class="fixed inset-0 hidden bg-[#040507] z-[101] overflow-auto p-6"><div class="flex justify-between items-center"><h1 class="text-xl font-bold text-cyan-300">Panel SCORVYNX — Blue</h1><button onclick="logoutAdmin()" class="glass px-4 py-2 rounded-full text-sm">Salir</button></div><div id="adminStats" class="mt-6 glass p-4 rounded-xl"></div><div id="adminProjects" class="mt-6"></div></div>
+
+<script>
+const services=[{n:'Diseño gráfico',i:'🎨'},{n:'Branding',i:'🪪'},{n:'Diseño web',i:'🌐'},{n:'Automatización',i:'⚙️'},{n:'IA Azul',i:'🤖'},{n:'Desarrollo Tech',i:'💻'},{n:'E-commerce',i:'🛒'},{n:'App Móvil',i:'📱'},{n:'Marketing',i:'📈'},{n:'Consultoría',i:'🧠'}];
+const products=[{n:'AirPods Pro Azul',p:249},{n:'Teclado Mecánico',p:189},{n:'StudioCam 4K',p:129},{n:'Drone Lite Azul',p:899},{n:'Hub USB-C',p:79},{n:'Monitor 4K',p:599},{n:'Mouse Pro',p:129},{n:'Laptop Stand',p:59}];
+function render(){let sg=document.getElementById('servGrid');sg.innerHTML='';services.forEach(s=>{sg.innerHTML+=`<div class='glass p-5 rounded-2xl'><div class='text-xl'>${s.i}</div><b class='text-sm mt-2 block'>${s.n}</b><button onclick='openForm()' class='mt-3 text-[11px] border border-cyan-400/20 px-3 py-1 rounded-full text-cyan-300'>Solicitar</button></div>`});let st=document.getElementById('storeGrid');st.innerHTML='';products.forEach((pr,idx)=>{st.innerHTML+=`<div class='glass p-5 rounded-2xl'><b class='text-sm block'>${pr.n}</b><div class='text-cyan-300 text-sm'>$${pr.p}</div><button onclick='addCart(${idx})' class='mt-3 w-full blue-grad text-black py-2 rounded-full text-xs font-bold'>Agregar</button></div>`})}render();
+let cart=[];function addCart(i){cart.push(products[i]);document.getElementById('cartCount').innerText=cart.length;document.getElementById('cartItems').innerHTML=cart.map(c=>`${c.n} — $${c.p}`).join('<br>')}function openCart(){document.getElementById('cartModal').style.display='flex'}function openForm(){document.getElementById('projModal').style.display='flex'}function closeModal(id){document.getElementById(id).style.display='none'}function submitProj(){let list=JSON.parse(localStorage.getItem('sx_blue')||'[]');list.unshift({name:document.getElementById('pName').value,desc:document.getElementById('pDesc').value,date:new Date().toLocaleString()});localStorage.setItem('sx_blue',JSON.stringify(list));alert('Proyecto azul enviado');closeModal('projModal');window.open('https://wa.me/593963000000?text=SCORVYNX AZUL: '+encodeURIComponent(document.getElementById('pDesc').value))}
+let qs=["¿Qué idea azul quieres convertir?","¿Qué tipo de servicio?","¿Presupuesto?","¿Tu nombre?","¿WhatsApp?"];let step=0,idata={};function openIA(){document.getElementById('iaModal').style.display='flex';step=0;idata={};document.getElementById('iaChat').innerHTML=`<div class='bg-cyan-500/10 border border-cyan-400/20 p-3 rounded-xl'>${qs[0]}</div>`}function nextIA(){let v=document.getElementById('iaInput').value.trim();if(!v)return;idata[qs[step]]=v;document.getElementById('iaChat').innerHTML+=`<div class='bg-blue-600/20 p-3 rounded-xl ml-6 mt-2'>${v}</div>`;step++;document.getElementById('iaInput').value='';if(step<qs.length){document.getElementById('iaChat').innerHTML+=`<div class='bg-white/5 p-3 rounded-xl mt-2'>${qs[step]}</div>`}else{let res=Object.entries(idata).map(([k,v])=>k+': '+v).join('<br>');document.getElementById('iaChat').innerHTML+=`<div class='glass p-4 rounded-xl mt-3'><b>Resumen Azul:</b><br>${res}<br><button onclick="openForm();closeModal('iaModal')" class='w-full mt-3 blue-grad text-black py-2 rounded-full font-bold'>Enviar</button></div>`}}
+let t=null;const logo=document.getElementById('logoTrigger');function start(e){e.preventDefault();t=setTimeout(()=>{document.getElementById('adminLogin').style.display='flex'},5000)}function cancel(){clearTimeout(t)}logo.addEventListener('mousedown',start);logo.addEventListener('touchstart',start,{passive:false});logo.addEventListener('mouseup',cancel);logo.addEventListener('touchend',cancel);
+const _p=atob('MjAwNA==');const _s=atob('c2NvcnZ5bngyMDI2');async function sha(s){const b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(s));return [...new Uint8Array(b)].map(x=>x.toString(16).padStart(2,'0')).join('')}document.getElementById('adminLoginBtn').onclick=async()=>{const pin=document.getElementById('adminPin').value;const pass=document.getElementById('adminPass').value;if(await sha(pin)==await sha(_p) && await sha(pass)==await sha(_s)){document.getElementById('adminLogin').style.display='none';document.getElementById('adminPanel').style.display='block';let list=JSON.parse(localStorage.getItem('sx_blue')||'[]');document.getElementById('adminStats').innerHTML=`${list.length} Proyectos Azules`;document.getElementById('adminProjects').innerHTML=list.map(p=>`<div class='glass p-4 rounded-xl mt-3'><b>${p.name}</b><div class='text-sm opacity-70'>${p.desc}</div><div class='text-[10px] opacity-30'>${p.date}</div></div>`).join('')}else{document.getElementById('adminError').classList.remove('hidden')}};function logoutAdmin(){document.getElementById('adminPanel').style.display='none'}
+</script>
+</body>
+</html>
